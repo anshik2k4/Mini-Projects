@@ -1,0 +1,33 @@
+*{
+background-color: white;
+}
+a{
+    color:red;
+    font-family:  'Arial Narrow Bold', sans-serif;
+}
+.box{
+    width: 325px;
+    border: 1.5px solid black;
+    border-radius: 15px;
+    padding: 15px;
+    margin-bottom: 20px;
+    
+}
+.Pet{
+    color: orangered;
+}
+
+
+img{
+    width: 100%;
+    border-radius: 20px;
+}
+
+#container{
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 90px;
+    flex-wrap: wrap;
+}
+
+

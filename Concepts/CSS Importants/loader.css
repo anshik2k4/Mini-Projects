@@ -1,0 +1,19 @@
+.circle{
+    height: 50px;
+    width: 50px;
+   border: 10px solid black;
+     border-top: 10px solid red;
+    border-radius: 50%;
+  animation: loader;
+  animation-duration: 2s;
+  animation-direction: linear;
+  animation-iteration-count: infinite;
+}
+
+@keyframes loader{
+100%{
+    transform: rotate(360deg);
+
+}
+
+}

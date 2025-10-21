@@ -1,0 +1,49 @@
+body{
+    background-color: white;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+h1{
+    text-align: center;
+}
+h2{
+    text-align: center;
+}
+
+.container{
+display: flex;
+flex-direction: row;
+justify-content: center;
+
+
+}
+.container-btn{
+height: 200px;
+width: 200px;
+border: 4px solid black;
+border-radius: 20%;
+margin: 2rem;
+}
+
+.red{
+    background-color: crimson;
+}
+.green{
+    background-color: green;
+}
+.blue{
+    background-color: blue;
+}
+.yellow{
+    background-color: yellow;
+}
+
+.whiteEffect{
+    background-color: aliceblue;
+}
+
+.purpleeffect{
+    background-color: purple;
+}
