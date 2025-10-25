@@ -92,9 +92,3 @@ resetbtn.addEventListener("click",()=>{
   
 });
 
-
-
-
-
-
-
