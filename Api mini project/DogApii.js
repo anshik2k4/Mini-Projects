@@ -15,10 +15,13 @@ let url="https://dog.ceo/api/breeds/image/random";
 
 async function getDogImages(){
     try {
- let res=await axios.get(url);
 
- 
- return res.data.message; // isse hume direct image link milegi 
+        let fetching= await fetch(url);
+//  let res=await axios.get(url);
+let res= await fetching.json();
+
+ return res.message;
+//  return res.data.message; // isse hume direct image link milegi 
     }
     catch(e){
         return e;

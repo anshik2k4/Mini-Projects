@@ -29,9 +29,11 @@ let url="http://universities.hipolabs.com/search?name=";
 async function getcollege(country){
 
     try{
+
     let res=await axios.get(url+country);
     console.log(res.data);
   return res.data;
+
 }
 catch(e){
    return e;
