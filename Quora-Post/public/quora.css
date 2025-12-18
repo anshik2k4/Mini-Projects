@@ -1,0 +1,153 @@
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family:system-ui,-apple-system,"Segoe UI",sans-serif;
+}
+
+/* ===== THEME COLORS ===== */
+:root{
+  --bg-dark:#1f2933;
+  --bg-darker:#111827;
+  --red-main:#dc2626;
+  --red-dark:#7f1d1d;
+  --red-soft:#fca5a5;
+  --gray-border:#374151;
+  --text-main:#f9fafb;
+}
+
+/* ===== BODY ===== */
+body{
+  background:linear-gradient(135deg,var(--bg-dark),var(--red-dark));
+  color:var(--text-main);
+}
+
+/* ===== HEADING ===== */
+h1{
+  text-align:center;
+  margin:20px 0 16px;
+  font-size:26px;
+  color:var(--red-soft);
+}
+
+/* ===== POST CARD ===== */
+.postbody{
+  width:70%;
+  margin:14px auto;
+  background:var(--bg-dark);
+  border:1px solid var(--gray-border);
+  border-radius:14px;
+  padding:16px 18px;
+  box-shadow:0 12px 22px rgba(0,0,0,0.5);
+}
+
+/* ===== TEXT ===== */
+.username{
+  font-size:13px;
+  color:var(--red-soft);
+  margin-bottom:6px;
+}
+
+.content{
+  font-size:15px;
+  line-height:1.55;
+  margin-bottom:12px;
+  color:var(--text-main);
+}
+
+/* ===== BUTTON ROW ===== */
+.postbody p{
+  display:flex;
+  justify-content:flex-end;
+  gap:8px;
+}
+
+/* ===== BUTTON BASE ===== */
+button{
+  padding:6px 14px;
+  font-size:13px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+  transition:0.2s ease;
+}
+
+button:hover{
+  transform:translateY(-1px);
+  opacity:0.95;
+}
+
+/* ===== BUTTON TYPES ===== */
+.postbody a:nth-of-type(1) button{
+  background:#374151;
+  color:var(--text-main);
+}
+
+.postbody a:nth-of-type(2) button{
+  background:var(--red-main);
+  color:#fff;
+}
+
+.postbody form button{
+  background:var(--red-dark);
+  color:#fff;
+}
+
+/* ===== ADD NEW BUTTON ===== */
+a[href$="/posts/new"] button{
+  display:block;
+  margin:22px auto 28px;
+  background:var(--red-main);
+  color:#fff;
+}
+
+/* ===== FORMS ===== */
+form{
+  width:70%;
+  margin:22px auto;
+  background:var(--bg-dark);
+  border-radius:14px;
+  padding:16px 18px;
+  border:1px solid var(--gray-border);
+  box-shadow:0 10px 20px rgba(0,0,0,0.45);
+}
+
+/* ===== INPUTS ===== */
+input[type="text"],
+textarea{
+  width:100%;
+  padding:10px;
+  border:1px solid #4b5563;
+  border-radius:6px;
+  font-size:14px;
+  background:var(--bg-darker);
+  color:var(--text-main);
+}
+
+textarea{
+  min-height:110px;
+  resize:vertical;
+}
+
+input:focus,
+textarea:focus{
+  outline:none;
+  border-color:var(--red-main);
+  box-shadow:0 0 0 2px rgba(220,38,38,0.35);
+}
+
+/* ===== FORM BUTTON ===== */
+form button{
+  margin-top:10px;
+  background:var(--red-main);
+  color:#fff;
+}
+
+/* ===== DETAIL PAGE ID ===== */
+h3:first-of-type{
+  width:70%;
+  margin:18px auto 6px;
+  font-size:13px;
+  color:var(--red-soft);
+}

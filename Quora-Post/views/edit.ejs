@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editing the post</title>
+    <link rel="stylesheet" href="/quora.css">
+</head>
+<body>
+     <h2 class="username">@<%=post.username%></h2>
+     <form action="/posts/<%=post.id%>?_method=PATCH" method="post">
+        <textarea name="newcontent" class="edit" ><%= post.content%>
+        </textarea>
+         <button>Save changes</button>
+     </form>
+</body>
+</html> 
