@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Delete data</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <h1 class="dlete_head">you are going to delete <%=info.username %></h1>
+    <form action="/home/user/<%=info.userid %>/delete" method="post">
+        <input type="password"  placeholder="enter your password" name="password" class="dlte_form">
+        <button class="dlete">Delete!!</button>
+    </form>
+</body>
+</html>

@@ -1,0 +1,260 @@
+/* Updated CSS - Added missing add.ejs classes */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  min-height: 100vh;
+  padding: 25px;
+}
+
+/* Add Form Specific Styles */
+.adding {
+  text-align: center;
+  color: #2d3748;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.addform {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+}
+
+/* NEW CLASSES for add.ejs */
+.textform, .mailform, .passform {
+  width: 100%;
+  padding: 15px 18px;
+  margin-bottom: 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+}
+
+.textform:focus, .mailform:focus, .passform:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: white;
+}
+
+.textform::placeholder, .mailform::placeholder, .passform::placeholder {
+  color: #a0aec0;
+}
+
+.submit {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+}
+
+.submit:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(72, 187, 120, 0.3);
+}
+
+/* Rest of previous styles remain same */
+.count {
+  text-align: center;
+  font-size: 3.5rem;
+  font-weight: 700;
+  color: #2d3748;
+  margin: 60px 0 50px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.joinus {
+  display: block;
+  margin: 0 auto;
+  padding: 16px 35px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: white;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+}
+
+.joinus:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
+}
+
+.table {
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+  overflow: hidden;
+  margin: 30px auto;
+  max-width: 1100px;
+}
+
+.heading { background: linear-gradient(135deg, #4c51bf, #5a67d8); }
+
+.head {
+  padding: 18px 24px;
+  color: white;
+  font-weight: 600;
+  font-size: 1rem;
+  text-align: left;
+}
+
+.data {
+  padding: 16px 24px;
+  color: #4a5568;
+  font-size: 0.95rem;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+tbody tr:hover { background: #f7fafc; }
+
+.datass { padding: 16px 24px; text-align: center; }
+
+.add_user button {
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+  padding: 14px 30px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.add_user button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(72, 187, 120, 0.3);
+}
+
+.datass button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.9rem;
+  margin: 0 5px;
+  background: linear-gradient(135deg, #ed8936, #dd6b20);
+  color: white;
+}
+
+.datass button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(237, 137, 54, 0.3);
+}
+
+.form {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+}
+
+.edit {
+  text-align: center;
+  color: #2d3748;
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.editform, .editpass, .dlte_form {
+  width: 100%;
+  padding: 15px 18px;
+  margin-bottom: 20px;
+  border: 2px solid #e2e8f0;
+  border-radius: 10px;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: #f7fafc;
+}
+
+.editform:focus, .editpass:focus, .dlte_form:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+  background: white;
+}
+
+.submission {
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+  background: linear-gradient(135deg, #48bb78, #38a169);
+  color: white;
+}
+
+.submission:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(72, 187, 120, 0.3);
+}
+
+.dlete_head {
+  text-align: center;
+  color: #2d3748;
+  font-size: 1.6rem;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.dlete {
+  background: linear-gradient(135deg, #f56565, #e53e3e) !important;
+  color: white !important;
+  width: 100%;
+  padding: 16px;
+  border: none;
+  border-radius: 10px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 10px;
+}
+
+.dlete:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(245, 101, 101, 0.3);
+}
+
+@media (max-width: 768px) {
+  .count { font-size: 2.5rem; margin: 40px 0 30px; }
+  .form, .addform { margin: 30px 20px; padding: 35px 25px; }
+  .head { padding: 15px 20px; font-size: 0.9rem; }
+  .data, .datass { padding: 14px 20px; font-size: 0.9rem; }
+  .datass button { display: block; width: 100%; margin: 8px 0; }
+}

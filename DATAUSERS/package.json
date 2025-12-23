@@ -1,0 +1,20 @@
+{
+  "name": "datausers",
+  "version": "1.0.0",
+  "description": "\"IT STORES THE THE USER INFORMATION\"",
+  "license": "ISC",
+  "author": "ANSHIK KUMAR",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@faker-js/faker": "^10.1.0",
+    "ejs": "^3.1.10",
+    "express": "^5.2.1",
+    "mysql2": "^3.16.0",
+    "nodemon": "^3.1.11",
+    "path": "^0.12.7"
+  }
+}

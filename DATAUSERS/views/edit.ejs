@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit</title>
+     <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    
+    <h1 class="edit">You are about to edit <%=info.username%></h1>
+    <form action="/home/user/<%=info.userid %>" method="post" class="form"> 
+        <input type="text" placeholder="enter username" name="username" class="editform">
+        <input type="password" placeholder="enter current password" name="password" class="editpass">
+        <button type="submit" class="submission">Submit</button>
+    </form>
+</body>
+</html>

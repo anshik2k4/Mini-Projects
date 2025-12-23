@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SHOW USERS</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+
+    <a href="http://localhost:3000/home/user/add" class="add_user"><button>Add USER</button></a>
+    <table border="1">
+  <thead class="table">
+    <tr class="heading">
+      <th class="head">User ID</th>
+      <th class="head">Username</th>
+      <th class="head">Email</th>
+      <th class="head">Password</th>
+      <th class="head">Edit</th>
+      <th class="head">Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+  <% for(user of users){ %>
+    <tr>
+      <td class="data"><%=user.userid%></td>
+      <td class="data"> <%=user.username%></td>
+      <td class="data"><%=user.email%></td>
+      <td class="data"><%=user.password%></td>
+      <td class="datass"><a href="http://localhost:3000/home/user/<%=user.userid%>"><button>EDIT USER DETAILS</button></a></td>
+      <td class="datass"><a href="http://localhost:3000/home/user/<%=user.userid%>/delete"><button>DELETE USER</button></a></td>
+
+    </tr>
+    <% } %>
+  </tbody>
+</table>
+
+</body>
+</html>
