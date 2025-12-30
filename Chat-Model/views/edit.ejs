@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+     <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1 class="edt">Edit your message</h1>
+
+    <h3 class="info">the message was send by <p class="frmmm"><%=result.from%></p> to <p class="tooo"><%=result.to%></p></h3>
+       
+    <form action="/home/<%=result.id%>/edit?_method=PATCH" method="post">
+        <textarea name="msgbox" class="msgbox" placeholder="<%=result.msg %>" ></textarea></textarea>
+        <button type="submit" class="Resend">Resend</button>
+    </form>
+
+    
+</body>
+</html>

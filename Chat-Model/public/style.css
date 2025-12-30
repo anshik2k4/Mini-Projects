@@ -1,0 +1,177 @@
+/* ===== RESET ===== */
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: "Inter", system-ui, Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body{
+  background:#0f172a; /* dark navy */
+  color:#e5e7eb;
+  padding:20px 0;
+}
+
+/* ===== HEADING ===== */
+.records{
+  text-align:center;
+  margin-bottom:18px;
+  font-size:22px;
+  font-weight:600;
+  color:#f8fafc;
+}
+
+/* ===== TOP BUTTON ===== */
+.sendlnk{
+  display:flex;
+  justify-content:center;
+  margin-bottom:22px;
+}
+
+.sndbtn{
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  padding:9px 18px;
+  border-radius:6px;
+  font-size:13px;
+  cursor:pointer;
+}
+
+/* ===== CHAT LIST ===== */
+ul{
+  list-style:none;
+  width:72%;
+  margin:auto;
+}
+
+/* ===== CHAT CARD ===== */
+.container{
+  background:#111827;
+  border:1px solid #1f2937;
+  border-radius:8px;
+  padding:12px 14px;
+  margin-bottom:14px;
+}
+
+/* ===== TEXT ===== */
+.from{
+  font-size:13px;
+  font-weight:600;
+  color:#60a5fa;
+}
+
+.to{
+  font-size:12px;
+  color:#9ca3af;
+  margin-top:2px;
+}
+
+.msg{
+  margin:8px 0;
+  font-size:14px;
+  color:#e5e7eb;
+  line-height:1.5;
+}
+
+/* ===== TIME ===== */
+.tmexne,
+.timezone{
+  font-size:11px;
+  color:#9ca3af;
+  text-align:right;
+}
+
+.dattezne,
+.dateformt{
+  font-size:11px;
+  color:#6b7280;
+  text-align:right;
+}
+
+/* ===== ACTIONS ===== */
+.editit,
+.deleteit{
+  text-align:right;
+  margin-top:6px;
+}
+
+.editmsgss{
+  background:transparent;
+  border:none;
+  color:#3b82f6;
+  font-size:12px;
+  cursor:pointer;
+}
+
+.deletemsgss{
+  background:transparent;
+  border:none;
+  color:#ef4444;
+  font-size:12px;
+  cursor:pointer;
+}
+
+/* ===== FORMS ===== */
+form{
+  width:60%;
+  margin:30px auto;
+  background:#111827;
+  border:1px solid #1f2937;
+  border-radius:8px;
+  padding:16px;
+}
+
+/* ===== INPUTS ===== */
+input,
+textarea{
+  width:100%;
+  padding:9px 10px;
+  border:1px solid #374151;
+  border-radius:6px;
+  background:#0f172a;
+  color:#f9fafb;
+  margin-bottom:10px;
+  font-size:14px;
+}
+
+input::placeholder,
+textarea::placeholder{
+  color:#9ca3af;
+}
+
+/* ===== FORM BUTTON ===== */
+.sendit,
+.Resend{
+  background:#2563eb;
+  color:#fff;
+  border:none;
+  padding:9px 18px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+/* ===== EDIT PAGE ===== */
+.edt{
+  text-align:center;
+  margin-bottom:14px;
+  font-size:20px;
+}
+
+.info{
+  text-align:center;
+  font-size:13px;
+  color:#9ca3af;
+  margin-bottom:12px;
+}
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  ul{
+    width:95%;
+  }
+  form{
+    width:90%;
+  }
+}

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+    <h1 class="records">Records OF all chats</h1>
+      <a class="sendlnk" href="http://localhost:3000/home/create"><button class="sndbtn">SEND YOUR MSG</button></a>
+    <ul>
+   <% for(let chat of result ){ %>
+        <li>
+            <div class="container">
+    <p class="from"> <%=chat.from%></p>
+    <p class="msg"> <%=chat.msg%></p>
+    <p class="to"> <%=chat.to%></p>
+    <hr>
+    <% if(chat.isEdited===true){ %>
+     <p class="timezone"> edited at <%=chat.date.toString().split(" ")[4] %> </p>
+     <p class="dateformt"><%=chat.date.toString().split(" ").slice(0,4).join("-")%> </p>
+   <%  } else{ %>
+    <p class="tmexne"><%=chat.date.toString().split(" ")[4] %> </p>
+    <p class="dattezne"><%=chat.date.toString().split(" ").slice(0,4).join("-") %> </p>
+    <% } %>
+    <p class="editit"><a href="http://localhost:3000/home/<%= chat.id%>/edit"> <button class="editmsgss">Edit your message</button></a></p>
+    <p class="deleteit">  
+        <form action="/home/<%=chat.id%>/delete?_method=DELETE" method="post">
+           <button class="deletemsgss">Delete</button>
+        </form>
+
+</div>
+</li>
+ <% }  %>
+
+    </ul>
+
+
+</body>
+</html>
