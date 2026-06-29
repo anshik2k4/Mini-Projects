@@ -3,12 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>home page</title>
-     <link rel="stylesheet" href="/css/style.css">
+    <title>Home - Employee System</title>
+    <link rel="stylesheet" href="/css/style.css">
 </head>
 <body>
-    <h1 class="count"> Total users are <%=users%></h1>
-    <a class="join" href="http://localhost:3000/home/user"><button class="joinus">JOIN US TODAY</button></a>
+    <div class="navbar">
+        <span class="nav-welcome">👋 Welcome, <strong><%= currentUser.username %></strong></span>
+        <a href="/logout"><button class="logout-btn">🚪 Logout</button></a>
+    </div>
+
+    <h1 class="count">Total Employees: <%=users%></h1>
+    <a href="/home/user"><button class="joinus">VIEW EMPLOYEES</button></a>
 </body>
 </html>
-

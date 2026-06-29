@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup - Employee System</title>
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-card">
+            <div class="auth-logo">🆕</div>
+            <h1 class="auth-title">Create Account</h1>
+            <p class="auth-subtitle">Register to the Employee System</p>
+
+            <% if (error) { %>
+                <div class="error-box"><%= error %></div>
+            <% } %>
+
+            <form action="/signup" method="POST">
+                <input type="text" placeholder="Username" name="username" class="textform" required>
+                <input type="email" placeholder="Email address" name="email" class="mailform" required>
+                <input type="password" placeholder="Password" name="password" class="passform" required>
+                <button type="submit" class="submit">CREATE ACCOUNT</button>
+            </form>
+
+            <p class="auth-switch">
+                Already have an account? <a href="/login">Login here</a>
+            </p>
+        </div>
+    </div>
+</body>
+</html>

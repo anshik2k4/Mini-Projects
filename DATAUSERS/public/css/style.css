@@ -1,9 +1,5 @@
-/* Updated CSS - Added missing add.ejs classes */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* ─── Reset ─────────────────────────────────────────── */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -12,34 +8,113 @@ body {
   padding: 25px;
 }
 
-/* Add Form Specific Styles */
-.adding {
-  text-align: center;
-  color: #2d3748;
-  font-size: 2rem;
-  font-weight: 600;
+/* ─── Navbar ─────────────────────────────────────────── */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
   margin-bottom: 30px;
 }
 
-.addform {
-  max-width: 450px;
-  margin: 50px auto;
-  padding: 40px;
-  background: white;
-  border-radius: 16px;
-  box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+.nav-welcome {
+  color: #4a5568;
+  font-size: 1rem;
 }
 
-/* NEW CLASSES for add.ejs */
+.logout-btn {
+  background: linear-gradient(135deg, #f56565, #e53e3e);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 0.9rem;
+  transition: all 0.3s ease;
+}
+
+.logout-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(245, 101, 101, 0.3);
+}
+
+/* ─── Auth Pages (Login / Signup) ───────────────────── */
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 90vh;
+}
+
+.auth-card {
+  background: white;
+  border-radius: 20px;
+  padding: 50px 40px;
+  width: 100%;
+  max-width: 420px;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.12);
+  text-align: center;
+}
+
+.auth-logo {
+  font-size: 3rem;
+  margin-bottom: 15px;
+}
+
+.auth-title {
+  color: #2d3748;
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+.auth-subtitle {
+  color: #718096;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+.error-box {
+  background: #fff5f5;
+  border: 1px solid #feb2b2;
+  color: #c53030;
+  padding: 12px 16px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  font-size: 0.9rem;
+}
+
+.auth-switch {
+  margin-top: 25px;
+  color: #718096;
+  font-size: 0.95rem;
+}
+
+.auth-switch a {
+  color: #667eea;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.auth-switch a:hover {
+  text-decoration: underline;
+}
+
+/* ─── Form Inputs ────────────────────────────────────── */
 .textform, .mailform, .passform {
   width: 100%;
   padding: 15px 18px;
-  margin-bottom: 20px;
+  margin-bottom: 16px;
   border: 2px solid #e2e8f0;
   border-radius: 10px;
   font-size: 1rem;
   transition: all 0.3s ease;
   background: #f7fafc;
+  display: block;
 }
 
 .textform:focus, .mailform:focus, .passform:focus {
@@ -58,27 +133,28 @@ body {
   padding: 16px;
   border: none;
   border-radius: 10px;
-  font-size: 1.1rem;
-  font-weight: 600;
+  font-size: 1.05rem;
+  font-weight: 700;
   cursor: pointer;
   transition: all 0.3s ease;
-  margin-top: 10px;
-  background: linear-gradient(135deg, #48bb78, #38a169);
+  margin-top: 6px;
+  background: linear-gradient(135deg, #667eea, #764ba2);
   color: white;
+  letter-spacing: 0.5px;
 }
 
 .submit:hover {
   transform: translateY(-2px);
-  box-shadow: 0 10px 30px rgba(72, 187, 120, 0.3);
+  box-shadow: 0 10px 30px rgba(102, 126, 234, 0.35);
 }
 
-/* Rest of previous styles remain same */
+/* ─── Home Page ──────────────────────────────────────── */
 .count {
   text-align: center;
   font-size: 3.5rem;
   font-weight: 700;
   color: #2d3748;
-  margin: 60px 0 50px;
+  margin: 50px 0 40px;
   background: linear-gradient(135deg, #667eea, #764ba2);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -105,6 +181,25 @@ body {
   box-shadow: 0 12px 35px rgba(102, 126, 234, 0.4);
 }
 
+/* ─── Add Form ───────────────────────────────────────── */
+.adding {
+  text-align: center;
+  color: #2d3748;
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 30px;
+}
+
+.addform {
+  max-width: 450px;
+  margin: 50px auto;
+  padding: 40px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 15px 50px rgba(0,0,0,0.1);
+}
+
+/* ─── Table ──────────────────────────────────────────── */
 .table {
   background: white;
   border-radius: 16px;
@@ -170,6 +265,7 @@ tbody tr:hover { background: #f7fafc; }
   box-shadow: 0 8px 25px rgba(237, 137, 54, 0.3);
 }
 
+/* ─── Edit / Delete Forms ────────────────────────────── */
 .form {
   max-width: 450px;
   margin: 50px auto;
@@ -251,10 +347,12 @@ tbody tr:hover { background: #f7fafc; }
   box-shadow: 0 10px 30px rgba(245, 101, 101, 0.3);
 }
 
+/* ─── Responsive ─────────────────────────────────────── */
 @media (max-width: 768px) {
   .count { font-size: 2.5rem; margin: 40px 0 30px; }
-  .form, .addform { margin: 30px 20px; padding: 35px 25px; }
+  .form, .addform, .auth-card { margin: 30px 20px; padding: 35px 25px; }
   .head { padding: 15px 20px; font-size: 0.9rem; }
   .data, .datass { padding: 14px 20px; font-size: 0.9rem; }
   .datass button { display: block; width: 100%; margin: 8px 0; }
+  .navbar { flex-direction: column; gap: 12px; text-align: center; }
 }

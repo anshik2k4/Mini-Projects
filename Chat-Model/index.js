@@ -4,6 +4,7 @@ const path=require("path");
 const app=express();
 const methodOverride = require("method-override"); 
 app.use(methodOverride("_method"));
+const ErrorHandler=require("./Errors/ErrorHandler");
 
 
 // defining port 
@@ -96,37 +97,39 @@ app.get("/home/create",(req,res)=>{
 res.render("create.ejs");
 });
 
-app.post("/home", async(req,res)=>{
-    let {from,msg,to}=req.body;
+app.post("/home", asyncWrap(async(req,res,next)=>{
+let {from,msg,to}=req.body;
     await new Chat({from:from,msg:msg,to:to}).save()
     .then((result)=>{
         console.log("This data inserted:"+result);
           res.redirect("/home");
 
-    })
-    .catch((err)=> console.log("Error occured while inserting "+err));
+    });
 
-});
+}));
 
 // update route
-app.get("/home/:id/edit",async (req,res)=>{
-    let {id}=req.params;
+app.get("/home/:id/edit",async (req,res,next)=>{
+  let {id}=req.params;
      await Chat.findById(id)
    .then((result)=>{
      res.render("edit.ejs",{result});
-    })
-    .catch((err)=> console.log("Error occured"+err));
-   
+    });
 });
-app.patch("/home/:id/edit", async(req,res)=>{
-   let {id}=req.params;
+app.patch("/home/:id/edit", async(req,res,next)=>{
+    try{
+     let {id}=req.params;
    let {msgbox}=req.body;
 
- await Chat.findByIdAndUpdate(id, { msg: msgbox,isEdited:true,date:new Date()})
+ await Chat.findByIdAndUpdate(id, { msg: msgbox,isEdited:true,date:new Date()},{runValidators: true})
  .then((result)=>{
      res.redirect("/home");
-    })
-    .catch((err)=> console.log("Error occured"+err));
+    });
+    }
+    catch(err){
+        next(err);
+    }
+   
 });
 
 
@@ -139,3 +142,45 @@ app.delete("/home/:id/delete", async(req,res)=>{
     })
     .catch((err)=> console.log("Could not Delete"+err));
 });
+
+//moongoose error handler one example
+// app.use((err,req,res,next)=>{
+//     console.log(err.name);
+//     if(err.name=="ValidationError"){
+//         console.log("Thie is validation error please follow rules");
+//         console.log(err.message);
+//     }
+// //     else{
+// next(err);
+// //     }
+    
+// });
+
+
+app.use((err,req,res,next)=>{
+// ye hum khudh ka moongoose ka ek error handle ka example se self mmsg client side pe bhej rhe 
+    if(err.name=="ValidationError"){
+        let msg="Thie is validation error please follow rules";
+        console.log(msg);
+        console.log(err.message);
+        res.send( "Validation Error: "+ msg);
+    }
+   let {status=500,message="Some error occured"}=err;
+   res.status(status).send(message);
+});
+
+
+
+
+app.use((req,res)=>{
+    res.send("Page not found");
+    next(err);
+});
+
+//Eror handling function using wrap async
+
+function asyncWrap(fn){
+    return function (req,res,next){
+        fn(req,res,next).catch((err)=>  next(err));    
+    }
+}
