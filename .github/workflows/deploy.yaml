@@ -19,18 +19,7 @@ jobs:
 
           script: |
             cd /home/ubuntu/project
-
             git pull origin main
-
             cd Quora-Post
-
-            docker stop mini-app || true
-            docker rm mini-app || true
-
-            docker build -t mini-app .
-
-            docker run -d \
-              --name mini-app \
-              -p 80:3000 \
-              --restart unless-stopped \
-              mini-app
+            docker compose down
+            docker compose up --build -d
