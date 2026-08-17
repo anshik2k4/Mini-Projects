@@ -37,7 +37,7 @@ let array =[
 }
 ];
 app.get("/posts",(req,res)=>{
-   res.render("Quora.ejs",{array});
+   res.render("quora.ejs",{array});
 
 });
 
