@@ -9,12 +9,12 @@
 /* ===== THEME COLORS ===== */
 :root{
   --bg-dark:#1f2933;
-  --bg-darker:#111827;
+  --bg-darker:#091c44;
   --red-main:#dc2626;
-  --red-dark:#7f1d1d;
-  --red-soft:#fca5a5;
-  --gray-border:#374151;
-  --text-main:#f9fafb;
+  --red-dark:#c90b0b;
+  --red-soft:#7c5a5a;
+  --gray-border:#3e76cf;
+  --text-main:#e0e9f3;
 }
 
 /* ===== BODY ===== */
