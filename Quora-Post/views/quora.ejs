@@ -3,26 +3,59 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
     <title>Main page</title>
+
     <link rel="stylesheet" href="/quora.css">
 </head>
+
 <body>
+
     <h1>Quora Posts</h1>
 
     <% for(let post of array) { %>
-    <div class="postbody">
-        <h2 class="username">@<%=post.username%></h2>
-        <h3 class="content"><%=post.content%></h3>
-       <p> <a href="http://localhost:3000/posts/<%= post.id%>"><button>See in detail</button></a>
-        <a href="http://localhost:3000/posts/<%= post.id%>/edit"><button>Edit Post</button></a>
-        <form action="/posts/<%=post.id%>/delete?_method=DELETE" method="post">
-            <button>DELETE</button>
-        </form>
-    </p>
-    </div>
-    <br>
+
+        <div class="postbody">
+
+            <h2 class="username">
+                @<%= post.username %>
+            </h2>
+
+            <h3 class="content">
+                <%= post.content %>
+            </h3>
+
+            <p>
+                <!-- View Post -->
+                <a href="/posts/<%= post.id %>">
+                    <button>See in detail</button>
+                </a>
+
+                <!-- Edit Post -->
+                <a href="/posts/<%= post.id %>/edit">
+                    <button>Edit Post</button>
+                </a>
+
+                <!-- Delete Post -->
+                <form
+                    action="/posts/<%= post.id %>/delete?_method=DELETE"
+                    method="post"
+                    style="display:inline;"
+                >
+                    <button type="submit">DELETE</button>
+                </form>
+            </p>
+
+        </div>
+
+        <br>
+
     <% } %>
 
-    <a href="http://localhost:3000/posts/new"><button>Add new</button></a>
+    <!-- Add New Post -->
+    <a href="/posts/new">
+        <button>Add new</button>
+    </a>
+
 </body>
 </html>
