@@ -1,0 +1,36 @@
+name: Deploy To EC2
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Connect EC2 and Deploy
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ubuntu
+          key: ${{ secrets.SSH_KEY }}
+
+          script: |
+            cd /home/ubuntu/project
+
+            git pull origin main
+
+            cd Quora-Post
+
+            docker stop mini-app || true
+            docker rm mini-app || true
+
+            docker build -t mini-app .
+
+            docker run -d \
+              --name mini-app \
+              -p 80:3000 \
+              --restart unless-stopped \
+              mini-app
