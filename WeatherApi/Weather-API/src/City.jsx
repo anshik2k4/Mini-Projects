@@ -27,7 +27,7 @@ export default function City({ getCity }) {
         type="submit"
         className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition"
       >
-        Get Data
+        Get Weather
       </button>
     </form>
   );
