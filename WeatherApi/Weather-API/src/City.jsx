@@ -18,7 +18,7 @@ export default function City({ getCity }) {
     <form onSubmit={onSubmit} className="flex gap-3 justify-center mt-10">
       <input
         type="text"
-        placeholder="Search City"
+        placeholder="Find City"
         onChange={onChange}
         value={city}
         className="bg-gray-800 text-white placeholder-gray-400 px-4 py-3 rounded-lg w-64 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
