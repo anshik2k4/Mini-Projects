@@ -1,0 +1,31 @@
+name: Build and Deploy to Minikube
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'WeatherApi/Weather-API/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: self-hosted
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Build Docker image
+        working-directory: WeatherApi/Weather-API
+        run: docker build -t anshik2k4/weather-api:latest .
+
+      - name: Log in to Docker Hub
+        run: docker login -u anshik2k4 -p ${{ secrets.DOCKER_PASSWORD }}
+
+      - name: Push Docker image
+        run: docker push anshik2k4/weather-api:latest
+
+      - name: Restart Kubernetes deployment
+        run: kubectl rollout restart deployment weather-api-deployment
+
+      - name: Verify rollout
+        run: kubectl rollout status deployment weather-api-deployment
