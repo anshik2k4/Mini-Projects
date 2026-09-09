@@ -26,12 +26,12 @@ let array = [
         id: uuidv4()
     },
     {
-        username: "Naman",
+        username: "Raman",
         content: "A Video Gamer",
         id: uuidv4()
     },
     {
-        username: "Dravid",
+        username: "Rohan",
         content: "A Proffessional Singer",
         id: uuidv4()
     }
