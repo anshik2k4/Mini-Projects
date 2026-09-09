@@ -18,7 +18,7 @@ export default function City({ getCity }) {
     <form onSubmit={onSubmit} className="flex gap-3 justify-center mt-10">
       <input
         type="text"
-        placeholder="Get City"
+        placeholder="Enter City"
         onChange={onChange}
         value={city}
         className="bg-gray-800 text-white placeholder-gray-400 px-4 py-3 rounded-lg w-64 border border-gray-700 focus:outline-none focus:ring-2 focus:ring-blue-500"
@@ -27,7 +27,7 @@ export default function City({ getCity }) {
         type="submit"
         className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-lg font-medium transition"
       >
-        Get Weather
+        Get Weather details
       </button>
     </form>
   );
